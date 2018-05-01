@@ -1,0 +1,14 @@
+.view-more-product{display: block; text-align: center; margin-top: 20px; margin-bottom: 30px}
+.view-more-product .cate-view-more{
+    text-align: center;
+    padding: 5px 20px;
+    background-color: #fff;
+    color: #111111;
+    font-size: 16px;
+    border: 1px solid #111111;
+    transition: all 0.4s;
+}
+.cate-view-more:hover{background-color: #111111; color: #fff;}
+
+
+
