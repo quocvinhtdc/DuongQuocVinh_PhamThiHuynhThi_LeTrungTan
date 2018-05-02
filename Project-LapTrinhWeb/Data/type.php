@@ -2,6 +2,7 @@
 	require "app/db.php";
 	 $db = new db();
 
+
  ?>
 
 <!DOCTYPE html><!--[if lt IE 9]>
@@ -148,12 +149,12 @@
                               <nav class="menu">
                                  <ul class="menulink">
                                  	<?php																				
-										        $theLoai = $db->theLoai();
+										$theLoai = $db->theLoai();
 
-										        foreach ($theLoai as $row) {						
-									         ?>
+										foreach ($theLoai as $row) {						
+									 ?>
                                     <li class="hassub">			
-                                     <a href="type.php?idName=<?php echo $row['idName']?>"> <?php echo $row['name'] ?> </a>
+                                      <a href="type.php?idName=<?php echo $row['idName']?>"> <?php echo $row['name'] ?> </a>
                                       
                                     </li>                                 									
 									<?php } ?>
@@ -738,10 +739,12 @@
 
 								  // Tính tổng số dòng
 								 $total_rows = $db->getRow($page, $per_page); 
-								 											
-								 $product = $db->getAllProduct($page, $per_page);
+								 
+                         $theLoai = $_GET['idName'];									
+								 $product = $db->getIdProduct($page, $per_page, $theLoai);
 
-								 foreach ($product as $row) {								  
+
+								 foreach ($product as $row) {						  
 								 ?>
                                <div class="item">
                                  <figure class="item-product">

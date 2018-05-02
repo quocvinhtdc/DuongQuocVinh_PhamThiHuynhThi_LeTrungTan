@@ -31,20 +31,6 @@ class db{
  	}
 
 
-	// lay ra ten product
-	public function nameProduct(){
-		//2. viet cau truy van
-		$sql="SELECT * FROM nameproduct" ;
-		//3.Thuc thi cau truy van
-		$result = self::$conn->query($sql);
-		//4.Chuyen object thanh mang
-		$arr = array();
-		while($row = $result->fetch_assoc()){
-			$arr[] = $row;
-		}
-		return $arr;
-	}
-
 	// tong per page
 	public function getRow($page, $per_page)
 	{
@@ -104,6 +90,53 @@ class db{
  		}
  		return $arr;
 
+ 	}
+
+ 	public function theLoai(){
+		//2. viet cau truy van
+		$sql="SELECT * FROM nameproduct";
+		//3.Thuc thi cau truy van
+		$result = self::$conn->query($sql);
+		//4.Chuyen object thanh mang
+		$arr = array();
+		while($row = $result->fetch_assoc()){
+			$arr[] = $row;
+		}
+		return $arr;
+	}
+
+	// lay ra ten product
+	public function nameProduct(){
+		//2. viet cau truy van
+		$sql="SELECT * FROM nameproduct" ;
+		//3.Thuc thi cau truy van
+		$result = self::$conn->query($sql);
+		//4.Chuyen object thanh mang
+		$arr = array();
+		while($row = $result->fetch_assoc()){
+			$arr[] = $row;
+		}
+		return $arr;
+	}
+
+
+
+
+	public function getIdProduct($page, $per_page, $theLoai)
+ 	{
+ 		// viet cau try van
+ 		$first_link = ($page - 1) * $per_page;
+		$sql = "SELECT * FROM products WHERE idType=$theLoai LIMIT $first_link, $per_page";
+ 		// thuc hien truy van
+ 		$result = self::$conn->query($sql);
+ 		// chuyen oj thanh mang
+ 		$arr = array();
+ 		while($row = $result->fetch_assoc()) 
+ 		{
+ 			$arr[]  = $row;
+ 		}
+
+ 		return $arr;
  	}
 
 

@@ -248,7 +248,7 @@
                         <div class="listproduct flex flex-wrap">
                         <?php
                          
-                              $per_page = 5;
+                              $per_page = 9;
                               $key = $_GET['keyword'];
                               $total_rows = $db->countSearch($key);
                               // Lấy số trang trên thanh địa chỉ
@@ -270,7 +270,7 @@
 
                               <div class="item">
                                  <figure class="item-product">
-                                    <a href="/giay-bit/giay-bit-got-vuong-bmt-0449-mau-xanh-navy" class="avatar" onclick='clickGA("Product List Category Lv2","1010BMT0449"," <?php echo $row['name'] ?> "," <?php echo $row['price'] ?> ","VASCARA","Giày","","1","/giay-bit/giay-bit-got-vuong-bmt-0449-mau-xanh-navy");'>
+                                    <a href="detail.php?name=<?php echo $row['name']?>&price=<?php echo $row['price'] ?>&jmg=<?php echo $row['img'] ?>" class="avatar">
                                        <img src="jmg/<?php echo $row['img'] ?>">
                                        <div class="overlay"></div>
                                        <div class="tem">
@@ -296,9 +296,10 @@
                         <div class="group-paging">
                            <div class="paging">
                               <ul>
-                                 <li class="active"><a class="number current" title="Trang hiện tại">1</a></li>
-                                 <li><a class="number" href="/product/search?page=2&sortby=lastest&sorttype=DESC&keyword=túi" title=" 2">2</a></li>
-                                 <li><a class="number" href="/product/search?page=3&sortby=lastest&sorttype=DESC&keyword=túi" title=" 3">3</a></li>
+                                <?php
+                                $base_url = $_SERVER['PHP_SELF']; // Hàm trả về tên file hiện hành
+                                echo $db->create_links ($base_url, $total_rows, $page, $per_page)
+                             ?>
                                 
                               </ul>
                            </div>
