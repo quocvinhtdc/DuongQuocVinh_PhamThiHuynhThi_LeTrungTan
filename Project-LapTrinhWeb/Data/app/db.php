@@ -64,6 +64,50 @@ class db{
 		return $link;
 	}
 
+	// ham phan trang của trang search
+	public function create_links_search ($base_url, $total_rows, $page, $per_page)
+	{
+		$total_links = ceil($total_rows/$per_page);
+		$link ="";
+		for($j=1; $j <= $total_links ; $j++)
+		{
+
+			// chu dam ai trang hien hanh
+			if($j == $page)
+			{
+				$link = $link."<a class = 'active-2' href='".$base_url."&page=$j'> $j </a>";					
+			}
+			else
+			{
+				$link = $link."<a href='".$base_url."&page=$j'> $j </a>";
+			}
+			
+		}
+		return $link;
+	}
+
+	// ham phan trang của trang type
+	public function create_links_type ($base_url, $total_rows, $page, $per_page)
+	{
+		$total_links = ceil($total_rows/$per_page);
+		$link ="";
+		for($j=1; $j <= $total_links ; $j++)
+		{
+
+			// chu dam ai trang hien hanh
+			if($j == $page)
+			{
+				$link = $link."<a class = 'active-2' href='".$base_url."&page=$j'> $j </a>";					
+			}
+			else
+			{
+				$link = $link."<a href='".$base_url."&page=$j'> $j </a>";
+			}
+			
+		}
+		return $link;
+	}
+
 	// cout search
  	public function countSearch($key)
  	{
@@ -109,6 +153,21 @@ class db{
 	public function nameProduct(){
 		//2. viet cau truy van
 		$sql="SELECT * FROM nameproduct" ;
+		//3.Thuc thi cau truy van
+		$result = self::$conn->query($sql);
+		//4.Chuyen object thanh mang
+		$arr = array();
+		while($row = $result->fetch_assoc()){
+			$arr[] = $row;
+		}
+		return $arr;
+	}
+
+
+	// lay ra name color
+	public function color(){
+		//2. viet cau truy van
+		$sql="SELECT * FROM color" ;
 		//3.Thuc thi cau truy van
 		$result = self::$conn->query($sql);
 		//4.Chuyen object thanh mang

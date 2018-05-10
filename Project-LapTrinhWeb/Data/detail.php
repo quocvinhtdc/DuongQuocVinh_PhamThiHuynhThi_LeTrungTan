@@ -1,4 +1,10 @@
-﻿<!DOCTYPE html><!--[if lt IE 9]>
+﻿<?php 
+   require "app/db.php";
+    $db = new db();
+
+ ?>
+
+<!DOCTYPE html><!--[if lt IE 9]>
 <html class='lt-ie9 no-js' lang='en'>
    <![endif]-->
    <!--[if gte IE 9]><!-->
@@ -105,7 +111,7 @@
                                  </div>
                                  <div class="search-icon"><img src="templates/current/img/imagesv/search.png" alt=""></div>
                                  <div class="search">
-                                    <form action="/product/search" method="get">
+                                    <form action="Search.php" method="get">
                                        <div class="searchwrap clearfix">
                                           <button type="submit" class="searchbutton"><img src="templates/current/img/n-icon/search.png" alt="vascara.com"></button>
                                           <input placeholder="Tìm..." name="keyword">
@@ -117,7 +123,7 @@
                         </div>
                      </div>
                      <div class="search-mobi">
-                        <form action="/product/search" method="get">
+                        <form action="Search.php" method="get">
                            <div class="searchwrap clearfix">
                               <button class="searchbutton"><img src="templates/current/img/n-icon/search.png" alt="vascara.com"></button>
                               <input placeholder="Tìm..." name="keyword">
@@ -131,73 +137,16 @@
                            <div class="col-lg-12 col-xl-10">
                               <nav class="menu">
                                  <ul class="menulink">
-                                    <li class="hassub">
-                                       <a href="/giay">GIÀY</a>
-                                       <div class="btn-showsub"><i class="fa fa-angle-right" aria-hidden="true"></i></div>
-                                       <div class="sub clearfix">
-                                          <div class="btn-closesub"><i class="fa fa-angle-left" aria-hidden="true"></i>GIÀY</div>
-                                          <ul>
-                                             <li class="active"><a href="/giay">Xem Tất Cả Giày</a></li>
-                                             <li class="active"><a href="/giay/giay-cao-got">Giày Cao Gót</a></li>
-                                             <li><a href="/giay/giay-bit">Giày Bít</a></li>
-                                             <li><a href="/giay/giay-sandals">Giày Sandal</a></li>
-                                             <li><a href="/giay/giay-bup-be">Giày Búp Bê</a></li>
-                                             <li><a href="/giay/giay-luoi">Giày Lười</a></li>
-                                             <li><a href="/giay/giay-boot">Giày Boot</a></li>
-                                             <li><a href="/giay/giay-da-that">Giày Da Thật</a></li>
-                                          </ul>
-                                       </div>
-                                    </li>
-                                    <li class="hassub">
-                                       <a href="/tui-xach">TÚI XÁCH</a>
-                                       <div class="btn-showsub"><i class="fa fa-angle-right" aria-hidden="true"></i></div>
-                                       <div class="sub clearfix">
-                                          <div class="btn-closesub"><i class="fa fa-angle-left" aria-hidden="true"></i>Túi Xách</div>
-                                          <ul>
-                                             <li class="active"><a href="/tui-xach">Xem Tất Cả Túi Xách</a></li>
-                                             <li class="active"><a href="/tui-xach/tui-xach-tay">Túi Xách Tay</a></li>
-                                             <li><a href="/tui-xach/tui-deo-cheo">Túi Đeo Chéo</a></li>
-                                             <li><a href="/tui-xach/tui-xach-da-that">Túi Xách Da Thật</a></li>
-                                          </ul>
-                                       </div>
-                                    </li>
-                                    <li class="hassub">
-                                       <a href="/vi-bop">VÍ BÓP</a>
-                                       <div class="btn-showsub"><i class="fa fa-angle-right" aria-hidden="true"></i></div>
-                                       <div class="sub clearfix">
-                                          <div class="btn-closesub"><i class="fa fa-angle-left" aria-hidden="true"></i>VÍ BÓP</div>
-                                          <ul>
-                                             <li class="active"><a href="/vi-bop">Xem Tất Cả Ví Bóp</a></li>
-                                             <li class="active"><a href="/vi-bop/vi-cam-tay">Ví Cầm Tay</a></li>
-                                             <li class="active"><a href="/vi-bop/vi-du-tiec">Ví Dự Tiệc</a></li>
-                                          </ul>
-                                       </div>
-                                    </li>
-                                    <li><a href="/tui-xach/balo">BALO</a></li>
-                                    <li class="hassub">
-                                       <a href="/giay/dep-guoc">DÉP & GUỐC</a>
-                                       <div class="btn-showsub"><i class="fa fa-angle-right" aria-hidden="true"></i></div>
-                                       <div class="sub clearfix">
-                                          <div class="btn-closesub"><i class="fa fa-angle-left" aria-hidden="true"></i>DÉP ĐẾ BỆT</div>
-                                          <ul>
-                                             <li class="active"><a href="/giay/dep-guoc?page=1&sortby=lastest&sorttype=DESC&record=12&loai-got=đế%20bệt">Dép Đế Bệt</a></li>
-                                             <li><a href="/product/search?keyword=guốc">Guốc</a></li>
-                                          </ul>
-                                       </div>
-                                    </li>
-                                    <li class="hassub">
-                                       <a href="#">PHỤ KIỆN</a>
-                                       <div class="btn-showsub"><i class="fa fa-angle-right" aria-hidden="true"></i></div>
-                                       <div class="sub clearfix">
-                                          <div class="btn-closesub"><i class="fa fa-angle-left" aria-hidden="true"></i>Phụ Kiện</div>
-                                          <ul>
-                                             <li class="active"><a href="/phu-kien/mat-kinh-nu">Mắt Kính</a></li>
-                                             <li class="active"><a href="/phu-kien/day-deo-tui-xach">Dây Đeo Túi Xách</a></li>
-                                          </ul>
-                                       </div>
-                                    </li>
-                                    <li><a href="/vascara-new-arrival">NEW ARRIVAL</a></li>
-                                    <li><a href="/vascara-sale-off">SALE OFF</a></li>
+                                       <?php                                                          
+                                      $theLoai = $db->theLoai();
+
+                                      foreach ($theLoai as $row) {                  
+                                    ?>
+                                    <li class="hassub">        
+                                     <a href="type.php?idName=<?php echo $row['idName']?>"> <?php echo $row['name'] ?> </a>
+                                      
+                                    </li>                                                          
+                           <?php } ?>
                                     <li class="hassub">
                                        <a href="/tin-tuc-su-kien/tin-tuc-vascara">TIN TỨC</a>
                                        <div class="btn-showsub"><i class="fa fa-angle-right" aria-hidden="true"></i></div>
@@ -260,7 +209,7 @@
                            <div class="breadcrumb">
                               <ul>
                                  <li><a href="/">Trang chủ</a></li>
-                                 <li><a href="/giay/"  title="Giày Vascara">Giày</a></li>                               
+                                                               
                                  <li><?php echo $_GET['name'] ?></li>
                               </ul>
                            </div>

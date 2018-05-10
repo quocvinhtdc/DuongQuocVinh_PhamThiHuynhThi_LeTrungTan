@@ -740,7 +740,7 @@
 								  // Tính tổng số dòng
 								 $total_rows = $db->getRow($page, $per_page); 
 								 
-                         $theLoai = $_GET['idName'];									
+                         $theLoai = $_GET['idName'];					
 								 $product = $db->getIdProduct($page, $per_page, $theLoai);
 
 
@@ -772,15 +772,13 @@
 
 								<?php } ?>
 
-
-                        
-                    
+                   
                            </div>
                            <div class="view-more-product">
                              
 							        <?php
-							           $base_url = $_SERVER['PHP_SELF']; // Hàm trả về tên file hiện hành
-							           echo $db->create_links ($base_url, $total_rows, $page, $per_page)
+							           $base_url = $_SERVER['PHP_SELF']."?idName=$theLoai"; // Hàm trả về tên file hiện hành
+							           echo $db->create_links_type ($base_url, $total_rows, $page, $per_page)
 							        ?>
 					
                            </div>

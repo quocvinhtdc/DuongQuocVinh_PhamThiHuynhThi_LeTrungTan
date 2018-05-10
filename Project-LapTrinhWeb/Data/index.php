@@ -14,7 +14,7 @@
         <head>
             <meta charset="utf-8">
             <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-            <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+            <meta name="viewport" content="width=device-width,initial-sca+le=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
             <meta name="format-detection" content="telephone=no">
             <meta name="msapplication-tap-highlight" content="no">
             <meta name="theme-color" content="#000">
@@ -85,7 +85,10 @@
 				  border: solid 1px #000;
 				  border-radius: 3px;
 				  color: #fff;
-							}
+				}
+            .logo {
+               font-size: 50px;
+            }
 			</style>
         </head>
 
@@ -100,7 +103,11 @@
                            </div>
                            <div class="col-xs-7 col-sm-7 col-md-7 col-lg-5 col-xl-2">
                               <div class="btn-showmenu"><span></span></div>
-                              <div class="logo"><a href="/"><img src="templates/current/img/logo.png" alt="Thương hiệu thời trang Vascara"></a></div>
+                              <div class="logo">
+                                 <a href="/">
+                                    Thi Thi
+                                 </a>
+                              </div>
                            </div>
                            <div class="col-xs-5 col-sm-5 col-md-5 col-lg-7 col-xl-4">
                               <div class="tool">
@@ -150,13 +157,13 @@
                                  	<?php																				
 										        $theLoai = $db->theLoai();
 
-										        foreach ($theLoai as $row) {						
+										        foreach ($theLoai as $row) {					
 									         ?>
                                     <li class="hassub">			
                                      <a href="type.php?idName=<?php echo $row['idName']?>"> <?php echo $row['name'] ?> </a>
                                       
                                     </li>                                 									
-									<?php } ?>
+									         <?php } ?>
 
 
                                     
@@ -258,8 +265,8 @@
                               </div>
                               <div class="group-filter viewtype style001" data-name="color">
                                  <div class="title-group-filter">Màu sắc<span class="buttontoggle"><i class="fa fa-angle-down"></i></span></div>
-                                 <div class="content-group">
-                                    <ul>
+                                 <div class="content-group">                                   
+                                     <ul>
                                        <li class="item-filter col-2">
                                           <div class="form-check">
                                              <input id="color1" data-value="be" data-id="color-be" type="checkbox" class="form-check-input filter-item" >
@@ -381,7 +388,7 @@
                                              <label for="color20" class="form-check-label"><span style="background-image: url('uploads/productoptionicon/2015/November/11/1447230683.png')" class="thuml-img"></span>Tím</label>
                                           </div>
                                        </li>
-                                    </ul>
+                                    </ul>     
                                  </div>
                               </div>
                               <div class="group-filter viewtype style001" data-name="loai-got">
@@ -720,7 +727,7 @@
                            </div>
 
                           <!--  item sản phẩm -->
-                           <div class="listproduct flex flex-wrap">                  
+                           <div class="listproduct flex flex-wrap">             
 							<?php
 								
 								 // hiển thị 5 sản phẩm trên 1 trang
@@ -767,11 +774,8 @@
                                  </figure>
                               </div>
 
-								<?php } ?>
+								<?php } ?> 
 
-
-                        
-                    
                            </div>
                            <div class="view-more-product">
                              

@@ -297,8 +297,8 @@
                            <div class="paging">
                               <ul>
                                 <?php
-                                $base_url = $_SERVER['PHP_SELF']; // Hàm trả về tên file hiện hành
-                                echo $db->create_links ($base_url, $total_rows, $page, $per_page)
+                                $base_url = $_SERVER['PHP_SELF']."?keyword=$key"; // Hàm trả về tên file hiện hành
+                                echo $db->create_links_search ($base_url, $total_rows, $page, $per_page)
                              ?>
                                 
                               </ul>
